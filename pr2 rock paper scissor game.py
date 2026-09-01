@@ -72,18 +72,15 @@ computer = 0
 player = 0
 
 while n < m:
-
     b = input("\nEnter :").lower()
 
     a = random.choice(list)
 
     if b in list:
-
         if b in a:
             print(f"\nComputer :-{hand1[a]} \nUser :-{hand2[b]}\nYou drawed its {a}")
 
         else:
-
             p = False
 
             if b in "rock" and a in "paper":

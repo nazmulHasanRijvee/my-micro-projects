@@ -17,7 +17,6 @@ name1_score = 0
 name2_score = 0
 
 for letters in name1:
-
     name1_score += ord(letters)
     # getting the summation of each letters ASCII value
 
@@ -34,15 +33,12 @@ couple_match = (total - difference) / total * 100
 # Which means finding out the gap between two numbers in percentage
 
 if couple_match > 85:
-
     print("\n💍 Soulmate written in stars!")
 
 elif couple_match > 65:
-
     print("\n💘 There is a strong connection")
 
 elif couple_match > 40:
-
     print("\n😕 Could work! Need effort")
 
 else:

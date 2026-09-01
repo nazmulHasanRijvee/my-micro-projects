@@ -40,7 +40,6 @@ def load_contact():
 def save(contacts_data):
 
     with open(FILE_NAME, "w") as f:  # type: TextIO
-
         json.dump(contacts_data, f, indent=4)
 
 
@@ -92,13 +91,10 @@ def view():
     # contacts = load_contact()
 
     if not contacts:
-
         print("\nThere is no contact available. ❌")
 
     else:
-
         for name, info in contacts.items():
-
             print("\nName: ", name)
 
             print("Phone :", info["phone"])
@@ -114,7 +110,6 @@ def search():
     name = input("\n🙂Enter tha name of the contact :- ").title()
 
     if name in contacts:
-
         info = contacts[name]
 
         print(f"\n🔍Found the contact for {name}")
@@ -123,7 +118,6 @@ def search():
 
         print(f"\n📧Email : {info['email']}")
     else:
-
         print("\nThe contact can't be found. ❌")
 
 
@@ -133,7 +127,6 @@ def update():
     name = input("\n🙂Enter the name of the contact to update :- ").title()
 
     if name in contacts:
-
         updating = input("\n🪪Enter the field(phone, email) to update :- ").lower()
 
         updating_info = input("\n🗃️Enter the info to update :- ").lower()
@@ -141,7 +134,6 @@ def update():
         update2(name, updating, updating_info)
 
     else:
-
         print("\nThe contact can't be found. ❌")
 
 
@@ -152,7 +144,6 @@ def update():
 def update2(name, updating, updating_info):
 
     if updating in ("phone", "email"):
-
         contacts[name].update({updating: updating_info})
 
         save(contacts)
@@ -160,7 +151,6 @@ def update2(name, updating, updating_info):
         print("\nThe contact has been updated successfully. ✅")
 
     else:
-
         print("\nThe field doesn't exist. ❌ ")
 
 
@@ -169,19 +159,16 @@ def delete():
     name = input("\n🙂Enter the name of the contact to delete :- ")
 
     if name in contacts:
-
         del contacts[name]
 
         save(contacts)
 
     else:
-
         print("\nThe contact can't be found. ❌")
 
 
 # Main code where all these methods are used.
 while True:
-
     menu()
 
     # Error handling if wrong data type is given as input for example strings instead of int.
@@ -189,36 +176,28 @@ while True:
         operation = int(input("\n😀Enter the operation you want to perform :- "))
 
     except ValueError:
-
-        print(f"\nOops invalid input please enter a number between 1-6. \n{20*'🙄'}")
+        print(f"\nOops invalid input please enter a number between 1-6. \n{20 * '🙄'}")
         continue
 
     if operation == 1:
-
         add()
 
     elif operation == 2:
-
         view()
 
     elif operation == 3:
-
         search()
 
     elif operation == 4:
-
         update()
 
     elif operation == 5:
-
         delete()
 
     elif operation == 6:
-
         print("\nThank you for using this program. ❤️")
         break
 
     else:
-
         print(f"\nOops invalid input please enter a number between 1-6. \n{20 * '🙄'}")
         continue

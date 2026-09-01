@@ -72,9 +72,7 @@ while True:
         continue
 
     else:
-
         if x == "yes":
-
             try:
                 y = int(input("\nHow long do you want the password? :- "))
             except ValueError:
