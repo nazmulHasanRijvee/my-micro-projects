@@ -1,10 +1,12 @@
 # imports tkinter gui
 import tkinter as tk
+
 # importing filedialog submodule for opening a file chooser dialog that opens or saves files.
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 
-
 """Open a file for editing."""
+
+
 def open_file():
     filepath = askopenfilename(
         filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
@@ -19,6 +21,8 @@ def open_file():
 
 
 """Save the current file as a new file."""
+
+
 def save_file():
     filepath = asksaveasfilename(
         defaultextension=".txt",
@@ -46,13 +50,13 @@ window.columnconfigure(1, minsize=300, weight=1)
 
 
 # Creating a frame to contain the buttons
-frm_buttons = tk.Frame(window, relief= "raised", bd=2)
+frm_buttons = tk.Frame(window, relief="raised", bd=2)
 
 
 # Creating the text and button widgets
-txt_edit = tk.Text(master= window)
-btn_open = tk.Button(master= frm_buttons, text="Open", command=open_file)
-btn_save = tk.Button(master= frm_buttons, text="Save As...", command=save_file)
+txt_edit = tk.Text(master=window)
+btn_open = tk.Button(master=frm_buttons, text="Open", command=open_file)
+btn_save = tk.Button(master=frm_buttons, text="Save As...", command=save_file)
 
 
 # Creating a 1 row/ 2 column grid

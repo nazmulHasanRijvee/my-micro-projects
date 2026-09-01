@@ -1,17 +1,18 @@
 import time
 import os
 
-print(f'{'Timer':^{40}}')
-print('-'*40)
-#Header alignment
+print(f"{'Timer':^{40}}")
+print("-" * 40)
+# Header alignment
 
-def errormanage(y ='none'):
+
+def errormanage(y="none"):
 
     while True:
         try:
-            x = int(input('Enter the'+y))
+            x = int(input("Enter the" + y))
         except ValueError:
-            print('Invalid input! Please enter a number.\n')
+            print("Invalid input! Please enter a number.\n")
             continue
 
         return x
@@ -19,18 +20,18 @@ def errormanage(y ='none'):
 
 def timing():
 
-    d = errormanage(' hour.\n')
+    d = errormanage(" hour.\n")
 
-    b = errormanage(' minute.\n')
+    b = errormanage(" minute.\n")
 
-    c = errormanage(' second.\n')
+    c = errormanage(" second.\n")
 
     while c >= 0:
 
-        print(f'{d} : {b} : {c}')
+        print(f"{d} : {b} : {c}")
 
         time.sleep(1)
-        os.system('cls')
+        os.system("cls")
 
         c -= 1
 
@@ -46,20 +47,21 @@ def timing():
 
     else:
 
-        print('Time\'s up!')
+        print("Time's up!")
+
 
 while True:
 
-    a = input('Do you want to set a timer?  :- ').lower()
+    a = input("Do you want to set a timer?  :- ").lower()
 
-    if a in 'yes':
+    if a in "yes":
 
         timing()
 
-    elif a in 'no':
-        print('Exiting the program. Thank you for using this program.')
+    elif a in "no":
+        print("Exiting the program. Thank you for using this program.")
         break
 
     else:
-        print('Invalid input!. Please enter yes or no.')
+        print("Invalid input!. Please enter yes or no.")
         continue
